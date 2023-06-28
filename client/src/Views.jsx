@@ -12,9 +12,9 @@ const Views = () => {
     <div >
     <Routes>
       <Route path="/" element={<SignIn />} />
-      <Route path="/home" element={<Home />} />
 
       <Route element={<ProtectedRoutes />}>
+        <Route path="/home" element={<Home />} />
         <Route path="/manage" element={<Manage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signOut" element={<SignOut />} />

@@ -8,7 +8,7 @@ RUN npm ci -qy
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 8484
 CMD ["npm", "start"]
 
 #CMD [ "server.js" ]

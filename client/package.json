@@ -37,7 +37,7 @@
 
     
   },
-  "proxy": "http://server:8080",
+  "proxy": "http://server:8484",
   "devDependencies": {
     "@types/node": "^16.11.10",
     "@types/react": "^18.0.2",

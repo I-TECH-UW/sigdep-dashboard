@@ -10,7 +10,7 @@ const User = require('./models/User');
 const withAuth = require('./middleware');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8484;
 const HOST = '0.0.0.0';
 
 const CLIENT_BUILD_PATH = path.join(__dirname, '../../client/build');

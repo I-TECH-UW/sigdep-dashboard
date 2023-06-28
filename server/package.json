@@ -36,7 +36,7 @@
     "server": "node server.js",
     "server-dev": "nodemon server.js"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "http://localhost:8484",
   "devDependencies": {
     "@types/node": "^16.11.10",
     "@types/react": "^18.0.2",
