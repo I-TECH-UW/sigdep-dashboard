@@ -21,14 +21,14 @@ services:
   client:
     build:
       context: ./client/
-    command: npm start
+    command: sh -c 'echo "PORT=3030" > .env && npm start'
     volumes:
       - ./client/:/usr/app
       - /usr/app/node_modules
     depends_on:
       - server
     ports:
-      - "3000:3000"
+      - "3030:3030"
     networks:
       - mern-app
   mysql:
