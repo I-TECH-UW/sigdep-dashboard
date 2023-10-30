@@ -23,7 +23,9 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-import logo from "./assets/react.svg"; // Replace "react.svg" with the actual file name and extension of your logo image
+//import logo from "./assets/react.svg"; // Replace "react.svg" with the actual file name and extension of your logo image
+
+import logo from "./assets/logo.png"; // Replace "react.svg" with the actual file name and extension of your logo image
 import Views from "./Views";
 
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
@@ -85,31 +87,8 @@ export default function Simple() {
                 ))}
               </HStack>
             </HStack>
-            <Flex alignItems={'center'}>
-              <Menu>
-                <MenuButton
-                  as={Button}
-                  rounded={'full'}
-                  variant={'link'}
-                  cursor={'pointer'}
-                  minW={0}>
-                  <Avatar
-                    size={'sm'}
-                    src={
-                      'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                    }
-                  />
-                </MenuButton>
-              </Menu>
-            </Flex>
+            <Box><Img src={logo} alt="Logo" boxSize={45} mr={2} /></Box>
           </Flex>
-
-
-
-
-
-
-
 
           {isOpen ? (
             <Box pb={4} display={{ md: 'none' }}>
@@ -123,14 +102,14 @@ export default function Simple() {
         </Box>
 
       </ChakraProvider>
-      <VStack h="100vh" justify="space-evenly" align="start">
 
-      <Box bg="gray.200" w="100%" py={4} px={8}  top={0} left={0}>
-        <Center>
-      <Views />
-      </Center>
-        
-      </Box>
+      <VStack h="100vh" justify="space-evenly" align="start">
+        <Box bg="gray.200" w="100%" py={4} px={8} top={0} left={0} flex="1" >
+          <Center h="100%">
+            <Views />
+          </Center>
+
+        </Box>
       </VStack>
     </>
   );

@@ -104,15 +104,34 @@ function Home() {
   const handleSearchInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
+  const inputStyle = {
+    marginBottom: '15px', // Add margin bottom for spacing between input fields,
+    borderColor: "gray.300", // Set border color
+    borderWidth: "1px",      // Set border width
+    borderRadius: "md",      // Set border radius,
+    width: "200px", 
+    height: "40px"
+  };
 
-
+  const buttonStyle = {
+    backgroundColor: "blue.500",
+    color: "blue",
+    width: "200px", 
+    height: "40px" ,
+    _hover: {
+      backgroundColor: "blue.700",
+    },
+    _focus: {
+      boxShadow: "outline",
+    },
+  };
   return (
 
-    <div >
+<div style={{ width: '100%', height: '100%' }}>
       <VStack h="80vh" align="start" >
-      <div style={{ display: 'flex', flexDirection: 'column', height: '80vh' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '80vh', width: '100%' }}>
 
-        <HStack h="80vh" justify="space-evenly" align="start"  spacing={0}>
+        <HStack h="80vh" justify="space-evenly" align="center"  spacing={0}>
           <Box bg="gray.200" w="100%" py={4} px={10} position="sticky" top={0} left={0}>
             <Center>
 
@@ -122,10 +141,10 @@ function Home() {
                 onChange={handleSearchInputChange}
                 placeholder="Search"
                 mr={8}
-                style={{ width: "200px", height: "40px"
-              }}
+              style={inputStyle}
               />
-              <Button onClick={handleFilter} style={{ width: "200px", height: "40px" }}
+              <Button onClick={handleFilter} 
+              style={buttonStyle}
               >Search</Button>
 
             </Center>

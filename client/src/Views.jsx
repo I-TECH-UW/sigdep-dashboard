@@ -9,7 +9,7 @@ import ProtectedRoutes from "./ProtectedRoutes";
 
 const Views = () => {
   return (
-    <div >
+<div style={{ width: '100%', height: '100%' }}>
     <Routes>
       <Route path="/" element={<SignIn />} />
 
