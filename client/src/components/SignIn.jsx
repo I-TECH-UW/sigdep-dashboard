@@ -44,12 +44,37 @@ const SignIn = () => {
     justifyContent: 'center',
     height: '100vh',
   };
+  const formStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%', // Set the height to 100%,
+    padding: '50px', // Add padding for better spacing
+    justifyContent: 'flex-start', // Distribute content evenly
 
+  };
+
+  const inputStyle = {
+    marginBottom: '15px', // Add margin bottom for spacing between input fields
+  };
+
+  const buttonStyle = {
+    backgroundColor: "blue.500",
+    color: "blue",
+    _hover: {
+      backgroundColor: "blue.700",
+    },
+    _focus: {
+      boxShadow: "outline",
+    },
+  };
   return (
 
-    <div >
-            <form onSubmit={onSubmit}>
-            <h1>SignIn Below!</h1>
+<div style={{ width: '100%', height: '50%' }}>
+<form onSubmit={onSubmit} style={formStyle}>
+            <h1           style={inputStyle} // Apply the inputStyle to add spacing
+>SignIn Below!</h1>
             <input
               type="email"
               name="email"
@@ -57,6 +82,8 @@ const SignIn = () => {
               value={email}
               onChange={handleInputChange}
               required
+              style={inputStyle} // Apply the inputStyle to add spacing
+
             />
             <input
               type="password"
@@ -65,8 +92,11 @@ const SignIn = () => {
               value={password}
               onChange={handleInputChange}
               required
+              style={inputStyle} // Apply the inputStyle to add spacing
+
             />
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit"           style={buttonStyle} // Apply the inputStyle to add spacing
+/>
           </form>
 
           </div>

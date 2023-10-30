@@ -44,7 +44,10 @@ const db = mysql.createConnection(dbConfig);
   const createTableQuery = `CREATE TABLE IF NOT EXISTS users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL
+    password VARCHAR(255) NOT NULL,
+    firstname VARCHAR(255),
+    middle VARCHAR(255),
+    lastname VARCHAR(255)
   )`;
 
   db.query(createTableQuery, (err) => {
@@ -61,7 +64,7 @@ const db = mysql.createConnection(dbConfig);
         } else {
           const adminCount = results[0].adminCount;
           if (adminCount === 0) {
-            const createAdminQuery = `INSERT INTO users (email, password) VALUES ('admin@gmail.com', 'adminpassword')`;
+            const createAdminQuery = `INSERT INTO users (email, password, firstname, middle, lastname) VALUES ('admin@gmail.com', 'adminpassword', 'Admin', '', 'User')`;
             db.query(createAdminQuery, (err) => {
               if (err) {
                 console.error('Error creating admin user:', err);
@@ -129,7 +132,7 @@ app.post('/api/authenticate', async function(req, res) {
 
 app.post('/api/register', async function(req, res) {
   try {
-    const { email, password } = req.body;
+    const { email, password, firstname, middle, lastname} = req.body;
     const query = 'SELECT * FROM users WHERE email = ?';
     db.query(query, [email], async (error, results) => {
       if (error) {
@@ -142,13 +145,19 @@ app.post('/api/register', async function(req, res) {
       if (user) {
         return res.status(401).json({ error: 'Email already exists' });
       }
-      
-      const query = 'INSERT INTO users (email, password) VALUES (?, ?)';
-      db.query(query, [email, password], (error, results) => {
+
+      const query = 'INSERT INTO users (email, password, firstname, middle, lastname) VALUES (?, ?, ?, ?, ?)';
+      db.query(query, [email, password, firstname, middle, lastname], (error, results) => {
         if (error) {
           console.error('Error executing MySQL query:', error);
           return res.status(500).json({ error: 'Internal error please try again' });
         }
+
+        console.log('Executing MySQL query:', query);
+        console.log('Executing MySQL query:', results);
+        console.log('Executing MySQL query:', firstname);
+        console.log('Executing MySQL query:', middle);
+        console.log('Executing MySQL query:', lastname);
         
         // Issue token
         const payload = { email };

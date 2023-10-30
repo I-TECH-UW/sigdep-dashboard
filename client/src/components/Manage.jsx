@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
+import { Flex, Box, Input, Button, HStack, VStack, Center } from "@chakra-ui/react";
 
 const Manage = () => {
   const [file, setFile] = useState(null);
@@ -38,22 +39,34 @@ const Manage = () => {
   const closeModal = () => {
     setSuccessModalOpen(false);
   };
-
+  const buttonStyle = {
+    backgroundColor: "blue.500",
+    color: "blue",
+    width: "200px", 
+    height: "40px" ,
+    _hover: {
+      backgroundColor: "blue.700",
+    },
+    _focus: {
+      boxShadow: "outline",
+    },
+  };
 
   return (
-    <div>
-      <h2>Upload configuration file below</h2>
+    <VStack h="80vh" justify="space-evenly" align="center"  spacing={0}>
+      <div>
+    <h2>Upload configuration file below</h2>
      <form onSubmit={handleFormSubmit}>
       <input type="file" accept=".csv" onChange={handleFileChange} />
-      <button type="submit">Upload</button>
+      <button type="submit" style={buttonStyle}>Upload</button>
     </form>
-
+    </div>
     <Modal isOpen={successModalOpen} onRequestClose={closeModal}>
         <h2>Success</h2>
         <p>File uploaded successfully!</p>
         <button onClick={closeModal}>Close</button>
       </Modal>
-    </div>
+    </VStack>
   );
 };
 
