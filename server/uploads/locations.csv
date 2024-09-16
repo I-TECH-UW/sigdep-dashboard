@@ -1,9 +1,4 @@
 Name,Openmrs,Openelis,Client Registry,OpenHIM
-Kampala,http://www.kampala.com,http://www.kampala.com,,
 TAP-CDI,https://tap-demo.openelisci.org/openmrs,https://test1.cihis.org:8443/OpenELIS-Global,https://tap-demo.openelisci.org/crux/,https://test1.cihis.org/openhim/#!/login
-Demo,http://35.85.179.171:8090/openmrs/,http://www.kampala.com,http://35.85.179.171:8090/openmrs/,
-Demo2,https://test1.cihis.org/openmrs/,https://test1.cihis.org:8443/OpenELIS-Global/LoginPage,http://test1.cihis.org:3000/crux/#/Login,
-Kampala,http://www.kolopd.com,http://www.kampala.com,,
-Mbale,http://www.mbale.com,http://www.mbale.com,,
-Kampala,http://www.kampala.com,http://www.kampala.com,,
-Mbale,http://www.mbale.com,http://www.mbale.com,,
+Sigdeb3 Demo,http://35.85.179.171:8090/openmrs/,http://www.kampala.com,http://35.85.179.171:8090/openmrs/,
+Sigdeb3 Demo2,https://test1.cihis.org/openmrs/,https://test1.cihis.org:8443/OpenELIS-Global/LoginPage,http://test1.cihis.org:3000/crux/#/Login,
